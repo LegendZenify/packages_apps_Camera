@@ -1591,16 +1591,7 @@ public class Camera extends ActivityBase implements FocusManager.Listener,
             return;
         }
 
-<<<<<<< HEAD
         mSnapshotOnIdle = false;
-=======
-        if (mSnapshotMode == CameraInfo.CAMERA_SUPPORT_MODE_ZSL) {
-            mFocusManager.setZslEnable(true);
-        } else {
-            mFocusManager.setZslEnable(false);
-        }
-
->>>>>>> 19c469c... Camera: add burst mode (up to 20 shots)
         mFocusManager.doSnap();
         mBurstShotsDone++;
 
@@ -2095,11 +2086,7 @@ public class Camera extends ActivityBase implements FocusManager.Listener,
         mFocusManager.onPreviewStarted();
         mCameraDevice.setParameters(mParameters);
 
-<<<<<<< HEAD
-        if (mSnapshotOnIdle) {
-=======
         if (mSnapshotOnIdle && mBurstShotsDone > 0) {
->>>>>>> 19c469c... Camera: add burst mode (up to 20 shots)
             mHandler.post(mDoSnapRunnable);
         }
     }
